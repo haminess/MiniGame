@@ -10,6 +10,7 @@
 CBlock::CBlock()
 	: m_Brush(BRUSH_TYPE::END)
 	, m_Color{}
+	, m_Delete(false)
 {
 	// random brush
 	std::random_device rd;
@@ -63,7 +64,7 @@ void CBlock::Render()
 
 void CBlock::BeginOverlap(CCollider* _OwnCollider, CObj* _OtherObj, CCollider* _OtherCollider)
 {
-	if (L"Missile" == _OtherObj->GetName())
+	if (m_Delete && L"Missile" == _OtherObj->GetName())
 	{
 		DeleteObject(this);
 		CGameMgr::Get()->AddScore(1);

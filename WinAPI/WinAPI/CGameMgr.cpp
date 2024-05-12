@@ -27,6 +27,7 @@ void CGameMgr::Init()
 			CBlock* pBlock = new CBlock;
 			pBlock->SetScale(100, 50);
 			pBlock->SetPos(PosX, PosY);
+			pBlock->SetDelete(true);
 			CreateObject(pBlock, LAYER_TYPE::MONSTER);
 
 			pBlock->Init();

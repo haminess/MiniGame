@@ -21,25 +21,6 @@ void CTaskMgr::Tick()
 	// GC Clear
 	for (size_t i = 0; i < m_GC.size(); ++i)
 	{
-
-		//CLevel* level = CLevelMgr::Get()->GetCurrentLevel();
-		//vector<CObj*> vecObj = level->m_arrLayer[m_GC[i]->GetLayerType()];
-		//vector<CObj*>::iterator iter = vecObj.begin();
-
-		//// 오브젝트를 Level vector에서 삭제
-		//for (; iter != vecObj.end(); )
-		//{
-		//	if (m_GC[i] == *iter)
-		//	{
-		//		iter = vecObj.erase(iter);
-		//	}
-		//	else
-		//	{
-		//		++iter;
-		//	}
-		//}
-		
-
  		delete m_GC[i]; 
 	}
 	m_GC.clear();
